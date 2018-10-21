@@ -5,8 +5,8 @@
       ul
         li(v-for="item in items" :key="item.id")
           h4
-            span {{ item.title }}
-            small by {{ item.user.id }}
+            span by
+            nuxt-link(:to="`/users/${item.user.id}`") {{ item.user.id }}
           div {{ item.body.slice(0, 130) }}
           p: a(:href="item.url") {{ item.url }}
 </template>
